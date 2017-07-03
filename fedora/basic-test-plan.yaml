@@ -32,9 +32,9 @@ run:
         - cd plan/
         - ./test-wrapper.sh
 
-#parse:
-#    pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASS|FAIL|CONF)\\s+\\d+"
-#    fixupdict:
-#        FAIL: fail
-#        PASS: pass
-#        CONF: skip
+parse:
+    pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASSED|FAILED|CONF)\\s+\\d+"
+    fixupdict:
+        FAILED: fail
+        PASSED: pass
+        CONF: skip
