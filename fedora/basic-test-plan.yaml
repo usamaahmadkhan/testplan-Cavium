@@ -21,8 +21,7 @@ install:
         - 'rm -rf /opt/Cavium'
         - 'mkdir -p /opt/Cavium'
         - 'cd /opt/Cavium'
-        - 'wget https://github.com/usamaahmadkhan/testplan-Cavium/tree/master/download/testbundle.tar'
-        - 'tar -xvzf testbundle.tar' 
+        - 'wget https://github.com/usamaahmadkhan/testplan-Cavium/tree/master/plan' 
     deps:
         - tar
         - wget
@@ -30,6 +29,7 @@ install:
 
 run:
     steps:
+        - cd plan/
         - ./test-wrapper.sh
 
 #parse:
