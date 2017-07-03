@@ -1,0 +1,40 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: basic-test-plan
+    description: "Tests for Fedora image. The test runs a wrapper that will run all the tests in the tests directory."
+    maintainer:
+        - usamaahmadkhan
+    os:
+        - fedora
+    scope:
+        - functional
+    devices:
+        - panda
+        - panda-es
+        - arndale
+        - vexpress-a9
+        - vexpress-tc2
+        - juno
+
+install:
+    steps:
+        - 'rm -rf /opt/Cavium'
+        - 'mkdir -p /opt/Cavium'
+        - 'cd /opt/Cavium'
+        - 'wget https://github.com/usamaahmadkhan/testplan-Cavium/tree/master/download/testbundle.tar'
+        - 'tar --strip-components=1 -Jxf testbundle.tar' 
+    deps:
+        - xz-utils
+        - wget
+        - curl
+
+run:
+    steps:
+        - ./test-wrapper.sh
+
+#parse:
+#    pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASS|FAIL|CONF)\\s+\\d+"
+#    fixupdict:
+#        FAIL: fail
+#        PASS: pass
+#        CONF: skip
