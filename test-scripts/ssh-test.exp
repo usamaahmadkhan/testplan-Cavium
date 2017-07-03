@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+
+set timeout 20
+set username [ lindex $argv 0 ]
+set server [ lindex $argv 1 ]
+
+spawn ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $username@$server > /dev/null 2>&1
+
+expect "Password:"
+send "password\r"

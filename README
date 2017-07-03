@@ -1,0 +1,3 @@
+Test plan for HTS and KTS.
+
+Test-wrapper.sh is the wrapper around all the tests. It will show the results by running all the shell scripts present in directory test-scirpts
