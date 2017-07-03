@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+
+set username [ lindex $argv 0 ]
+set passwd [ lindex $argv 1 ]
+
+spawn sudo useradd $username
+interact
+spawn sudo passwd $username
+
+expect "Enter new UNIX password:"
+send "$passwd\r"
+
+expect "Retype new UNIX password:"
+send "$passwd\r"
+

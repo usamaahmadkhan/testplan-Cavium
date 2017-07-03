@@ -1,0 +1,7 @@
+#!/usr/bin/expect
+
+set username [ lindex $argv 0 ]
+set passwd [ lindex $argv 1 ]
+set dir [ lindex $argv 2 ]
+
+spawn sudo su -c "sudo mkdir $dir" $username > ~/Desktop/err.txt
