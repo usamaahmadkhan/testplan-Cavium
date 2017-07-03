@@ -22,7 +22,7 @@ install:
         - 'mkdir -p /opt/Cavium'
         - 'cd /opt/Cavium'
         - 'wget https://github.com/usamaahmadkhan/testplan-Cavium/tree/master/download/testbundle.tar'
-        - 'tar -xvf testbundle.tar' 
+        - 'tar -xvzf testbundle.tar' 
     deps:
         - tar
         - wget
