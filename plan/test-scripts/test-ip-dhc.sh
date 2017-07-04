@@ -4,7 +4,6 @@ sudo dhclient -q > /dev/null 2>&1
 if [ $? -eq 0 ]
 then 
     count=$(ip addr | grep "dynamic eth" | wc -l)
-    echo $count
     if [ $count -eq 1 ]
     then echo "pass"
     else echo "fail"
