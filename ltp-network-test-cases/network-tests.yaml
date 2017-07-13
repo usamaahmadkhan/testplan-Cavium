@@ -36,8 +36,8 @@ params:
 
 run:
     steps:
-        - 'ls -al' 
-        - 'cd testscripts/'
+        - 'ls -al /opt/ltp/' 
+        - 'cd /opt/ltp/testscripts/'
         - 'chmod network.sh'
         - './network.sh -6 -m -n -r -s -t -a -e -b -i -T -U -R -V'
 
