@@ -37,9 +37,9 @@ params:
 run:
     steps:
         - 'ls -al /opt/ltp/' 
-        - 'cd /opt/ltp/testscripts/'
-        - 'chmod a+x network.sh'
-        - './network.sh -6 -m -n -r -s -t -a -e -b -i -T -U -R -V'
+        - 'cd /opt/ltp/testcases/lib/'
+        - 'chmod a+x /opt/ltp/testscripts/network.sh'
+        - './opt/ltp/testscripts/network.sh -6 -m -n -r -s -t -a -e -b -i -T -U -R -V'
 
 parse:
     pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASS|FAIL|CONF)\\s+\\d+"
