@@ -36,8 +36,10 @@ params:
 
 run:
     steps:
-        - 'chmod +x ./testscripts/network.sh'
-        - './testscripts/network.sh -6 -m -n -r -s -t -a -e -b -i -T -U -R -V'
+        - 'ls -al' 
+        - 'cd testscripts/'
+        - 'chmod network.sh'
+        - './network.sh -6 -m -n -r -s -t -a -e -b -i -T -U -R -V'
 
 parse:
     pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASS|FAIL|CONF)\\s+\\d+"
