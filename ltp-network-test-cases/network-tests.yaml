@@ -36,7 +36,7 @@ params:
 
 run:
     steps: 
-        - 'cd /opt/ltp/build/testscripts/
+        - 'cd /opt/ltp/build/testscripts/'
         - 'chmod a+x ./network.sh'
         - './network.sh -m -n -r -s -t -a -e -b -i -T -U -R -V'
 
