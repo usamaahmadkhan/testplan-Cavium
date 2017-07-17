@@ -23,8 +23,8 @@ install:
         - 'make all'
         - 'make SKIP_IDCHECK=1 install'
         - 'cd /opt/ltp/build/testcases/bin/'
-        - 'sed -i "s/export LHOST_IFACES=${LHOST_IFACES:-\"eth0\"}/export LHOST_IFACES=${LHOST_IFACES:-\"enp2s0\"}/g" test_net.sh'
-        - 'sed -i "s/export RHOST_IFACES=${RHOST_IFACES:-\"eth0\"}/export RHOST_IFACES=${RHOST_IFACES:-\"enp2s0\"}/g" test_net.sh'
+        - 'sed -i "s/export LHOST_IFACES=${LHOST_IFACES:-"eth0"}/export LHOST_IFACES=${LHOST_IFACES:-"enp2s0"}/g" test_net.sh'
+        - 'sed -i "s/export RHOST_IFACES=${RHOST_IFACES:-"eth0"}/export RHOST_IFACES=${RHOST_IFACES:-"enp2s0"}/g" test_net.sh'
         - 'cat test_net.sh'
 
 
