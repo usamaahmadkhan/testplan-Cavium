@@ -28,7 +28,7 @@ install:
         - 'cat test_net.sh'
        
 params:
-    TST_CMDFILES: "LHOST_IPV4_HOST=1 RHOST_IPV4_HOST=1 IPV4_NETWORK=172.31.122 IPV4_NET_REV=122.31.172 LHOST_IFACES=enp2s0 RHOST_IFACES=enp2s0"
+    # TST_CMDFILES: "LHOST_IPV4_HOST=1 RHOST_IPV4_HOST=1 IPV4_NETWORK=172.31.122 IPV4_NET_REV=122.31.172 LHOST_IFACES=enp2s0 RHOST_IFACES=enp2s0"
     # SKIPFILE can be a filename from dir ../common/scripts/ltp/ or an open URL
     # SKIPFILE: "skipfile-lsk-juno"
     # "skipfile-lsk-juno" is a known file present in dir ../common/scripts/ltp/
@@ -41,7 +41,7 @@ run:
     steps: 
         - 'cd /opt/ltp/build/testscripts/'
         - 'chmod a+x ./network.sh'
-        - '$TST_CMDFILES ./network.sh -aV'
+        - 'LHOST_IPV4_HOST=1 RHOST_IPV4_HOST=1 IPV4_NETWORK=172.31.122 IPV4_NET_REV=122.31.172 LHOST_IFACES=enp2s0 RHOST_IFACES=enp2s0 ./network.sh -aV'
 
 parse:
     pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASS|FAIL|CONF)\\s+\\d+"
