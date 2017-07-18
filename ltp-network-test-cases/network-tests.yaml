@@ -42,7 +42,7 @@ run:
     steps: 
         - 'cd /opt/ltp/build/testscripts/'
         - 'chmod a+x ./network.sh'
-        - './network.sh -aV'
+        - './network.sh -h'
 
 parse:
     pattern: "^(?!.+ED)(?P<test_case_id>\\w+)\\s+(?P<result>PASS|FAIL|CONF)\\s+\\d+"
